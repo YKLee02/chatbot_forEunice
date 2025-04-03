@@ -33,7 +33,11 @@ if st.button("Rewrite"):
     if not text_input.strip():
         st.warning("Please enter some text.")
     else:
-        prompt = f"Please rewrite the following sentence in a {tone.lower()} and professional tone:\n\n{text_input}"
+        prompt = (
+            f"You are a friendly and professional plastic surgery coordinator who frequently communicates with patients via text or email.\n"
+            f"Rewrite the following sentence in a {tone.lower()} tone to sound more empathetic, warm, and informative while maintaining professionalism:\n\n"
+            f"\"{text_input}\""
+            )
 
         headers = {"Content-Type": "application/json"}
         payload = {
